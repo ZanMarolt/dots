@@ -1,0 +1,21 @@
+alias lsa="ls -al"
+alias reload!=". ~/.zshrc"
+alias open-ports="lsof -i -P -n | grep LISTEN "
+alias cwd='printf "%q\n" "$(pwd)"'
+alias date-fmt='date +"%d-%m-%Y" | pbcopy'
+
+# Docker helpers
+alias docker/clean='docker rm $(docker ps -aq) -f'
+alias docker/cleanall/services='docker service rm $(docker service ls -q) && docker rm $(docker ps -aq) -f'
+alias docker/cleanall/images='docker rmi -f $(docker images -q)'
+alias docker/cleanall/containers='docker rm $(docker ps -aq) -f'
+alias docker/kill="osascript -e 'quit app \"Docker\"'"
+alias docker/start="open -a Docker"
+
+# GIT helpers
+alias git/clean/branches="git branch | fzf --multi --bind 'ctrl-a:select-all' | xargs git branch -D"
+
+# WRM Helpers
+alias mr-desc='git log origin..$(git rev-parse --abbrev-ref HEAD) | grep -v "^commit\|Author:\|Date:" | pbcopy'
+wrm/seed() { make -C $IOTAMH_MIGRATIONS_LOCATION seed }
+

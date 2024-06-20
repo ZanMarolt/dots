@@ -2,7 +2,7 @@
         name = Zan Marolt
         email = zan.marolt@zan.sh
 [core]
-        excludesfile = /Users/zanmarolt/.gitignore_global
+        excludesfile = ~/.gitignore_global
 [push]
         # prevents your from accidentally pushing to a wrong branch
         default = nothing

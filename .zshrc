@@ -108,3 +108,6 @@ export PATH="/Users/zanmarolt/Library/Python/2.7/bin:$PATH"
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# GPG key tty
+export GPG_TTY=$(tty)

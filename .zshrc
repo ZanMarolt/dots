@@ -92,9 +92,6 @@ for file in ~/.{alias,alias.local,exports,exports.local}; do
 done;
 unset file;
 
-# Direnv
-eval "$(direnv hook zsh)"
-
 # Go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 

@@ -1,6 +1,6 @@
 [user]
         name = Zan Marolt
-        email = zan.marolt@3fs.si
+        email = zan.marolt@zan.sh
 [core]
         excludesfile = /Users/zanmarolt/.gitignore_global
 [push]

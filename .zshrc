@@ -100,6 +100,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
 [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
+# Auto select node version
+[[ -s "$HOME/.auto-nvm-use.sh" ]] && source "$HOME/.auto-nvm-use.sh"
+
 # Brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

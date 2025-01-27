@@ -92,25 +92,32 @@ for file in ~/.{alias,alias.local,exports,exports.local}; do
 done;
 unset file;
 
-# Go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+case "$OSTYPE" in
+  darwin*)
+    # macOS specifics
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+    # nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-# Auto select node version
-[[ -s "$HOME/.auto-nvm-use.sh" ]] && source "$HOME/.auto-nvm-use.sh"
+    # Auto select node version
+    [[ -s "$HOME/.auto-nvm-use.sh" ]] && source "$HOME/.auto-nvm-use.sh"
 
-# Brew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+    # Brew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# make pip packages executable
-export PATH="/Users/zanmarolt/Library/Python/2.7/bin:$PATH"
+    # make pip packages executable
+    export PATH="/Users/zanmarolt/Library/Python/2.7/bin:$PATH"
 
-# Yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+    # Yarn
+    export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+    ;;
+  linux*)
+    # Linux specifics
+    export USR="$HOME/zanmarolt"
+    ;;
+esac
 
 # GPG key tty
 export GPG_TTY=$(tty)

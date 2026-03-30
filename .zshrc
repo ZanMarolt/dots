@@ -116,6 +116,13 @@ case "$OSTYPE" in
   linux*)
     # Linux specifics
     export USR="$HOME/zanmarolt"
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+    # Auto select node version
+    [[ -s "$HOME/.auto-nvm-use.sh" ]] && source "$HOME/.auto-nvm-use.sh"
     ;;
 esac
 

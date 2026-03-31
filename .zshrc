@@ -123,6 +123,9 @@ case "$OSTYPE" in
 
     # Auto select node version
     [[ -s "$HOME/.auto-nvm-use.sh" ]] && source "$HOME/.auto-nvm-use.sh"
+
+    # Claude install
+    export PATH="$HOME/.local/bin:$PATH"
     ;;
 esac
 
